@@ -43,18 +43,6 @@ const filterClickHandler = function (e) {
 };
 $searchButton.addEventListener('click', filterClickHandler);
 
-function tableSort() {
-    debugger;
-    let sortedRows = Array.from(table.rows[1].cells[1]);
-    console.log(sortedRows);
-    sortedRows.slice(1);
-      
-    console.log(sortedRows);
-    sortedRows.sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1);
-      console.log(sortedRows);
-    table.tBodies[0].append(...sortedRows);
-};
-
 function tableSortUp() {
     $tbody.innerHTML = '';
     var sortedRows = list;
