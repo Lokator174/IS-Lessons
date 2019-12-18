@@ -51,6 +51,7 @@ function tableSortDown() { // Сортировка
 };
 
 function searchDocuments(element) { // Проверка элементов на схожесть
+    var searchValue = $filterInput.value;
     var property = element.name;
             if (property.indexOf(searchValue) > -1) {
                 return true;
@@ -58,7 +59,6 @@ function searchDocuments(element) { // Проверка элементов на 
     }
 
 function search(){ // Поиск
-    searchValue = $filterInput.value;
     const filter = listBody.filter(searchDocuments).map(drawTableBody).join('');
     document.querySelector(bodySelector).innerHTML = filter;
 }
