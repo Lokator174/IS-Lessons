@@ -64,7 +64,6 @@ class CreateTable {
     }
 
     search() {
-        debugger;
         let filter = this.listBody.filter(this.searchDocuments).map(this.createTableBody).join('');
         document.querySelector('table tbody').innerHTML = filter;
     }
@@ -74,4 +73,4 @@ let newTableElements = new CreateTable(listHead, listBody);
 newTableElements.drawTableHeader();
 newTableElements.drawTableBody();
 
-$searchButton.addEventListener('click', newTableElements.search());
+$searchButton.onclick = function(){newTableElements.search();};
